@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @font-face {
+    font-family: League Spartan;
+    src: url(https://fonts.google.com/specimen/League+Spartan);
+  }
+
+  margin: 0;
+  background-color: var(--bg-main);
+  font-family: League Spartan, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+}
+
+// ---
+
+:root {
+  &[data-theme="1"] {
+    // ---- THEME 1
+
+    // bg
+    --bg-main: hsl(222, 26%, 31%);
+    --bg-keypad: hsl(223, 31%, 20%);
+    --bg-screen: hsl(224, 36%, 15%);
+
+    // #### Keys
+    --bg-key-blue: hsl(225, 21%, 49%);
+    --shadow-key-blue: hsl(224, 28%, 35%);
+    --bg-key-red: hsl(6, 63%, 50%);
+    --shadow-key-red: hsl(6, 70%, 34%);
+    --bg-key-light: hsl(30, 25%, 89%);
+    --shadow-key-light: hsl(28, 16%, 65%);
+
+    // #### Text
+    --text-white: #ffffff;
+    --text-dark: hsl(221, 14%, 31%);
+  }
+
+  &[data-theme="2"] {
+    // ---- THEME 2
+
+    // bg
+    --bg-main: hsl(0, 0%, 90%);
+    --bg-keypad: hsl(0, 5%, 81%);
+    --bg-screen: hsl(0, 0%, 93%);
+
+    // #### Keys
+    --bg-key-blue: hsl(185, 42%, 37%);
+    --shadow-key-blue: hsl(185, 58%, 25%);
+    --bg-key-red: hsl(25, 98%, 40%);
+    --shadow-key-red: hsl(25, 99%, 27%);
+    --bg-key-light: hsl(45, 7%, 89%);
+    --shadow-key-light: hsl(35, 11%, 61%);
+
+    // #### Text
+    --text-dark: hsl(60, 10%, 19%);
+    --text-white: hsl(0, 0, 100%);
+  }
+
+  &[data-theme="3"] {
+    // ---- THEME 3
+
+    // bg
+    --bg-main: hsl(268, 75%, 9%);
+    --bg-keypad: hsl(268, 71%, 12%);
+    --bg-screen: hsl(268, 71%, 12%);
+
+    // #### Keys
+    --bg-key-blue: hsl(281, 89%, 26%);
+    --shadow-key-blue: hsl(285, 91%, 52%);
+    --bg-key-red: hsl(176, 100%, 44%);
+    --shadow-key-red: hsl(177, 92%, 70%);
+    --bg-key-light: hsl(268, 47%, 21%);
+    --shadow-key-light: hsl(290, 70%, 36%);
+
+    // #### Text
+    --text-dark: hsl(52, 100%, 62%);
+    --text-white: white;
+  }
+
+  // ### Theme 3
+
+  // #### Backgrounds
+
+  // - Very dark violet (main background):
+  // - Very dark violet (toggle background, keypad background, screen background):
+
+  // #### Keys
+
+  // - Dark violet (key background): hsl(281, 89%, 26%)
+  // - Vivid magenta (key shadow):
+
+  // - Pure cyan (key background, toggle):
+  // - Soft cyan (key shadow):
+
+  // - Very dark violet (key background):
+  // - Dark magenta (key shadow):
+
+  // #### Text
+
+  // - Light yellow: hsl(52, 100%, 62%)
+  // - Very dark blue: hsl(198, 20%, 13%)
+  // - White (text): hsl(0, 0, 100%)
+
+  // ## Typography
+
+  // ### Body Copy
+
+  // - Font size (numbers): 32px
+}
+
+// ---
+
+.display-none {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+// -----
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 15px;
+}
+
+.App_contain {
+  display: flex;
+  flex-direction: column;
+
+  width: 395px;
+  max-width: 100%;
+  height: 500px;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.App_screen {
+  margin: 20px 0;
+}
+
+.App_keyboard {
+  height: 1rem;
+  flex-grow: 1;
+}
+
+// -----
+
+.device-mobile {
+  .App_contain {
+    height: 100%;
+    max-height: 550px;
+  }
+}

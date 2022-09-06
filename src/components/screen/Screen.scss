@@ -1,0 +1,19 @@
+.Screen{
+  height: 100px;
+  padding: 25px;
+  border-radius: 10px;
+  background-color: var(--bg-screen);
+
+  text-align: end;
+  color: var(--text-white);
+  font-size: 27px;
+}
+
+.Screen_contain{
+  height: 100%;
+  overflow-x: scroll;
+
+  &::-webkit-scrollbar{
+    height: 10px;
+  }
+}

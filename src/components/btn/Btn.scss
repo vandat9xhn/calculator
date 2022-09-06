@@ -1,0 +1,62 @@
+.Btn {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  
+  cursor: pointer;
+}
+
+.Btn_btn {
+  position: relative;
+  z-index: 1;
+  
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+  transform: translateY(-4px);
+  transition: 25ms ease-in;
+  background-color: var(--bg-key-light);
+  
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 900;
+  cursor: pointer;
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.Btn_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.btn-number,
+.btn-math {
+  background-color: var(--bg-key-light);
+  color: var(--text-dark);
+  &-bg {
+    background-color: var(--shadow-key-light);
+  }
+}
+
+.btn-func {
+  background-color: var(--bg-key-blue);
+  color: var(--text-white);
+  &-bg {
+    background-color: var(--shadow-key-blue);
+  }
+}
+
+.btn-return {
+  background-color: var(--bg-key-red);
+  color: var(--text-white);
+  &-bg {
+    background-color: var(--shadow-key-red);
+  }
+}

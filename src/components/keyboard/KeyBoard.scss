@@ -1,0 +1,25 @@
+.KeyBoard {
+  height: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--bg-keypad);
+}
+
+.KeyBoard_row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(5, minmax(0, 1fr));
+  gap: min(20px, 10%);
+
+  height: 100%;
+}
+
+.KeyBoard_item {
+  align-items: center;
+}
+.KeyBoard_large-1 {
+  grid-column: 1 / span 2;
+}
+.KeyBoard_large-2 {
+  grid-column: 3 / span 2;
+}
