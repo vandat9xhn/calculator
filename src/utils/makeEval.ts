@@ -1,5 +1,9 @@
 //
-export const makeEval = (stack: string[]) => {
+export const makeEval = (
+  stack: string[],
+  rounding = false,
+  num_rounding = 2
+) => {
   const arr_first = stack[0] === "-" ? ["0"] : ["0", "+"];
   const new_stack = [...arr_first, ...stack, "+", "0"];
   let result = 0;
@@ -27,12 +31,11 @@ export const makeEval = (stack: string[]) => {
     i += 2;
   }
 
-  const x = result % 1;
-
-  if (x === 0) {
+  //
+  if (!rounding) {
     return `${result}`;
   }
 
-  const tail = `${x}`.slice(1, 4);
-  return `${result - x}${tail}`;
+  const power_ten = 10 ** num_rounding;
+  return `${Math.round(result * power_ten) / power_ten}`;
 };

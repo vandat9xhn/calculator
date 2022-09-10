@@ -28,11 +28,11 @@ export const pressReturn = (new_state_obj: AppStateObj) => {
 
     stack[item[0]] = result_child;
     for (let ix = 0; ix <= item[1] - item[0] - 1; ix++) {
-      stack[item[0] + 1 + ix] = ix % 2 === 0 ? "+" : "0";
+      stack[item[0] + 1 + ix] = ix % 2 === 0 ? "x" : "1";
     }
   }
 
-  const result = makeEval(stack);
+  const result = makeEval(stack, true);
   new_state_obj.stack = [result];
   new_state_obj.done = true;
   new_state_obj.parentTheses = {

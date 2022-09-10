@@ -56,7 +56,7 @@ body {
 
     // #### Text
     --text-dark: hsl(60, 10%, 19%);
-    --text-white: hsl(0, 0, 100%);
+    --text-white: hsl(60, 10%, 19%);
   }
 
   &[data-theme="3"] {
@@ -77,38 +77,8 @@ body {
 
     // #### Text
     --text-dark: hsl(52, 100%, 62%);
-    --text-white: white;
+    --text-white: hsl(52, 100%, 62%);
   }
-
-  // ### Theme 3
-
-  // #### Backgrounds
-
-  // - Very dark violet (main background):
-  // - Very dark violet (toggle background, keypad background, screen background):
-
-  // #### Keys
-
-  // - Dark violet (key background): hsl(281, 89%, 26%)
-  // - Vivid magenta (key shadow):
-
-  // - Pure cyan (key background, toggle):
-  // - Soft cyan (key shadow):
-
-  // - Very dark violet (key background):
-  // - Dark magenta (key shadow):
-
-  // #### Text
-
-  // - Light yellow: hsl(52, 100%, 62%)
-  // - Very dark blue: hsl(198, 20%, 13%)
-  // - White (text): hsl(0, 0, 100%)
-
-  // ## Typography
-
-  // ### Body Copy
-
-  // - Font size (numbers): 32px
 }
 
 // ---

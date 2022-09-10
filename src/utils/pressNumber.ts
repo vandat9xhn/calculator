@@ -15,6 +15,15 @@ export const pressNumber = (new_state_obj: AppStateObj, str_number = "") => {
 
   const last_letter = last_stack.slice(-1);
 
+  // after - at first or after (-
+  if (
+    (stack.length === 1 || stack.slice(-2)[0] === "(") &&
+    last_stack === "-"
+  ) {
+    stack[stack.length - 1] += str_number;
+    return;
+  }
+
   // after (, key_math
   if (["(", ...ARR_KEY_MATH].includes(last_letter)) {
     stack.push(str_number);

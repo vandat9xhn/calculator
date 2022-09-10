@@ -1,6 +1,6 @@
-.Screen{
+.Screen {
   height: 100px;
-  padding: 25px;
+  padding: 15px;
   border-radius: 10px;
   background-color: var(--bg-screen);
 
@@ -9,11 +9,35 @@
   font-size: 27px;
 }
 
-.Screen_contain{
+.Screen_contain {
+  display: flex;
+  flex-direction: row-reverse;
   height: 100%;
-  overflow-x: scroll;
+  padding: 10px;
 
-  &::-webkit-scrollbar{
+  white-space: nowrap;
+  overflow-y: hidden;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
     height: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--text-white);
+    border-radius: 10px;
+  }
+}
+
+// ----
+
+.device-mobile {
+  .Screen_contain {
+    &::-webkit-scrollbar {
+      height: 0;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: transparent;
+      border-radius: 0;
+    }
   }
 }
