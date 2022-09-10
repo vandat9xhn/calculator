@@ -1,32 +1,51 @@
-export const ARR_KEY_NUMBER = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "."];
-export const ARR_KEY_FUNC = ["del", "reset", "="];
+export const ARR_KEY_NUMBER = [
+  "0",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+];
+export const ARR_KEY_MORE_NUMBER = ["()", ".", "%"];
+export const ARR_KEY_FUNC = ["del", "c", "="];
 export const ARR_KEY_MATH = ["+", "-", "x", "/"];
 
 export const ARR_KEY_SMALL = [
-  7,
-  8,
-  9,
+  "()",
+  "%",
   "del",
-  4,
-  5,
-  6,
   "+",
-  1,
-  2,
-  3,
+
+  "7",
+  "8",
+  "9",
   "-",
-  ".",
-  0,
-  "/",
+
+  "4",
+  "5",
+  "6",
   "x",
+
+  "1",
+  "2",
+  "3",
+  "/",
+
+  ".",
+  "0",
+  "c",
+  "=",
 ];
-export const ARR_KEY_LARGE = ["reset", "="];
+export const ARR_KEY_LARGE = [];
 
 type KeySmall = typeof ARR_KEY_SMALL[number];
-type KeyLarge = typeof ARR_KEY_LARGE[number];
 
 type ObjKeysType = {
-  [K in KeySmall | KeyLarge]: {
+  [K in KeySmall]: {
     type: "number" | "func" | "math";
     str_key: string;
     class_name: string;
@@ -37,7 +56,7 @@ type ObjKeysType = {
 export const OBJ_KEYS = ((): ObjKeysType => {
   const obj_keys = {} as ObjKeysType;
 
-  ARR_KEY_NUMBER.forEach((i) => {
+  [...ARR_KEY_NUMBER, ...ARR_KEY_MORE_NUMBER].forEach((i) => {
     obj_keys[i] = {
       type: "number",
       str_key: `${i}`,

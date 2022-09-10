@@ -1,11 +1,13 @@
 //
 export const makeEval = (stack: string[]) => {
-  const new_stack = ["0", "+", ...stack, "+", "0"];
+  const arr_first = stack[0] === "-" ? ["0"] : ["0", "+"];
+  const new_stack = [...arr_first, ...stack, "+", "0"];
   let result = 0;
   let i = 2;
 
   while (i <= new_stack.length - 3) {
-    const num = parseFloat(new_stack[i]);
+    const num =
+      parseFloat(new_stack[i]) / (new_stack[i].slice(-1) === "%" ? 100 : 1);
     const prev_math = new_stack[i - 1];
     const next_math = new_stack[i + 1];
 
