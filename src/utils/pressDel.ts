@@ -17,8 +17,11 @@ export const pressDel = (new_state_obj: AppStateObj) => {
   }
 
   const last_letter = last_stack.slice(-1);
-  stack.pop();
-  
+  stack[stack.length - 1] = last_stack.slice(0, last_stack.length - 1);
+  if (last_stack.length === 1) {
+    stack.pop();
+  }
+
   // after "("
   if (last_letter === "(") {
     parentTheses.arr_ix_open.pop();

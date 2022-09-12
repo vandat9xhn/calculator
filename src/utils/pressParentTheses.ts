@@ -16,8 +16,19 @@ export const pressParentTheses = (new_state_obj: AppStateObj) => {
   }
 
   const last_letter = last_stack.slice(-1);
+  // // after (-: open
+  // if (
+  //   last_stack === "-" &&
+  //   stack.length >= 2 &&
+  //   stack.slice(-2)[0].slice(-1) === "("
+  // ) {
+  //   parentTheses.arr_ix_open.push(stack.length - 1);
+  //   stack[stack.length - 1] += "(";
+  //   return;
+  // }
+
   // after math, (: open
-  if ([...ARR_KEY_MATH, '('].includes(last_letter)) {
+  if ([...ARR_KEY_MATH, "(", "-"].includes(last_letter)) {
     parentTheses.arr_ix_open.push(stack.length);
     stack.push("(");
     return;

@@ -17,7 +17,7 @@ export const pressNumber = (new_state_obj: AppStateObj, str_number = "") => {
 
   // after - at first or after (-
   if (
-    (stack.length === 1 || stack.slice(-2)[0] === "(") &&
+    (stack.length === 1 || stack.slice(-2)[0].slice(-1) === "(") &&
     last_stack === "-"
   ) {
     stack[stack.length - 1] += str_number;
